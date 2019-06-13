@@ -6,24 +6,36 @@
 
 ### Email setup
 
-There is no additional setup beyond customizing templates [#customizing-templates](see below)
+There is no additional setup beyond customizing templates [see below](#customizing-templates)
 
 ### Twilio setup
 
 1. Create a twilio account
 2. Create a Twilio Project
 3. Purchase a Twilio phone number (starting at USD $1/mo)
-4. Copy your production `Account SID` from your Project's [Settings page](https://www.twilio.com/console/project/settings)
+4. Copy your production `Account SID` from your [Project's Settings page](https://www.twilio.com/console/project/settings)
     and paste it into the `tracktor-twilio-sid` [Mesa Secrets](https://getmesa.com/go/secrets) field
-5. Copy your production `Auth Token` from your Project's [Settings page](https://www.twilio.com/console/project/settings)
+5. Copy your production `Auth Token` from your [Project's Settings page](https://www.twilio.com/console/project/settings)
     and paste it into the `tracktor-twilio-token` [Mesa Secrets](https://getmesa.com/go/secrets) field
-6. Customize your SMS templates [#customizing-templates](see below)
+6. Customize your SMS templates [see below](#customizing-templates)
 
-> Note: Twilio charges a per-SMS fee [starting at USD $0.01]()
+> Note: Twilio charges a per-SMS fee [starting at USD $0.01](https://www.twilio.com/sms/pricing/us)
     
 
 ## Customizing templates
 
 To edit your email templates, go to the [Mesa Storage](https://getmesa.com/go/storage) tab.
- - For emails: edit the `tracktor-email-*.liquid` and `tracktor-email-subject-*` storage items
- - For SMS messages send via Twilio: edit the `tracktor-sms-*.liquid` storage items
+- For emails: edit the `tracktor-email-*.liquid` and `tracktor-email-subject-*` storage items
+- For SMS messages send via Twilio: edit the `tracktor-sms-*.liquid` storage items
+ 
+All storage fields support liquid and have access to your full store details, order information and tracking information. 
+Common liquid variables include:
+- `shop.name`
+- `order.customer.name`
+- `order.name` The human-readable order number
+- `order.status`
+- `order.line_items`
+- `order.shipping_address`
+- `data` All of the tracking data
+- `carrier` Details about the carrier
+- `tracking_number`
