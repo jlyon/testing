@@ -28,7 +28,10 @@ There is no additional setup beyond customizing templates [see below](#customizi
 To edit your email templates, go to the [Mesa Storage](https://getmesa.com/go/storage) tab.
 - For emails: edit the `tracktor-email-*.liquid` and `tracktor-email-subject-*` storage items
 - For SMS messages send via Twilio: edit the `tracktor-sms-*.liquid` storage items
- 
+
+> To disable an email or SMS alert, simply delete the corresponding storage item for that alert. 
+  For example do disable in_transit email alerts delete `tracktor-email-in-transit.liquid`.
+
 All storage fields support liquid and have access to your full store details, order information and tracking information. 
 Common liquid variables include:
 - `shop.name`
