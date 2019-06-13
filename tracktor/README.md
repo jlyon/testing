@@ -1,4 +1,5 @@
-# Send Email and SMS Alerts on Tracktor Status changes
+# Tracktor Alerts
+Send Email and SMS Alerts on Tracktor status changes
 
 [Install this library on Mesa](https://getmesa.com/install/shoppad/mesa-library/tracktor)
 
